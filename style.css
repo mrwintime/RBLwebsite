@@ -1,6 +1,6 @@
 /* Base Styles & Variables */
 :root {
-    --primary-color: #1e293b; /* Changed to dark slate for headings/text */
+    --primary-color: #ffffff; /* Changed to dark slate for headings/text */
     --accent-color: #2563eb; /* Changed to royal blue for better contrast */
     --text-dark: #475569; /* Soft dark gray */
     --text-light: #ffffff;
