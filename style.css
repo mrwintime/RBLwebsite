@@ -1,10 +1,11 @@
-/* Base Styles & Variables */
+/* Base Styles & Variables - Professional Light Theme */
 :root {
-    --primary-color: #0f172a; /* Deep Slate Blue */
-    --accent-color: #0ea5e9; /* Tech Blue */
-    --text-dark: #334155;
-    --text-light: #f8fafc;
-    --bg-light: #f1f5f9;
+    --primary-color: #1e293b; /* Dark Slate for headings */
+    --accent-color: #2563eb; /* Royal Tech Blue */
+    --text-dark: #475569; /* Soft dark gray for reading */
+    --text-light: #ffffff;
+    --bg-main: #f8fafc; /* Ultra-light slate for main background */
+    --bg-alt: #f1f5f9; /* Slightly darker for alternating sections */
     --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -18,6 +19,7 @@
 body {
     font-family: var(--font-main);
     color: var(--text-dark);
+    background-color: var(--bg-main);
     line-height: 1.6;
 }
 
@@ -27,28 +29,37 @@ body {
     padding: 0 2rem;
 }
 
-/* Navigation */
+/* Navigation - Now Light Mode */
 header {
-    background-color: rgba(15, 23, 42, 0.95);
+    background-color: rgba(255, 255, 255, 0.95);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Soft shadow to separate from page */
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 5%;
+    padding: 1.2rem 5%;
 }
 
 .logo {
-    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 1px;
+}
+
+.logo-icon {
+    height: 40px;
+    width: auto;
 }
 
 .logo span {
@@ -62,9 +73,10 @@ header {
 }
 
 .nav-links a {
-    color: var(--text-light);
+    color: var(--text-dark);
     text-decoration: none;
     font-size: 0.95rem;
+    font-weight: 500;
     transition: color 0.3s;
 }
 
@@ -72,10 +84,10 @@ header {
     color: var(--accent-color);
 }
 
-/* Hero Section */
+/* Hero Section - Light Gradient */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, var(--primary-color) 0%, #1e293b 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,18 +97,18 @@ header {
 
 .hero-content {
     max-width: 800px;
-    margin-top: 60px; /* Offset for navbar */
+    margin-top: 60px;
 }
 
 .hero h1 {
-    color: var(--text-light);
+    color: var(--primary-color);
     font-size: 4rem;
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .hero p {
-    color: #cbd5e1;
+    color: var(--text-dark);
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
@@ -112,12 +124,14 @@ header {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
 }
 
 .btn:hover {
-    background-color: #0284c7;
+    background-color: #1d4ed8;
     transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
 }
 
 /* Common Section Styles */
@@ -133,7 +147,7 @@ header {
 }
 
 .bg-light {
-    background-color: var(--bg-light);
+    background-color: var(--bg-alt);
 }
 
 /* About Section */
@@ -147,6 +161,7 @@ header {
 .about-text h3 {
     margin-bottom: 1rem;
     color: var(--accent-color);
+    font-size: 1.4rem;
 }
 
 .about-text p {
@@ -164,7 +179,8 @@ header {
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
     border-top: 4px solid var(--accent-color);
 }
 
@@ -184,14 +200,14 @@ header {
     background: white;
     padding: 2.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid #e2e8f0;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
 }
 
 .card-icon {
@@ -216,11 +232,14 @@ header {
     border-left: 4px solid var(--accent-color);
     margin-bottom: 1.5rem;
     border-radius: 0 8px 8px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid var(--accent-color);
 }
 
 .project-item h3 {
     margin-bottom: 0.5rem;
+    color: var(--primary-color);
 }
 
 /* Contact Form */
@@ -230,6 +249,11 @@ header {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
 }
 
 .form-group {
@@ -244,11 +268,13 @@ input, textarea {
     border: 1px solid #cbd5e1;
     border-radius: 4px;
     font-family: inherit;
+    background-color: #f8fafc;
 }
 
 input:focus, textarea:focus {
     outline: none;
     border-color: var(--accent-color);
+    background-color: white;
 }
 
 /* Footer */
@@ -261,7 +287,7 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links { display: none; /* In a full build, add a hamburger menu here */ }
+    .nav-links { display: none; }
     .hero h1 { font-size: 2.5rem; }
     .about-grid { grid-template-columns: 1fr; }
     .form-group { grid-template-columns: 1fr; }
